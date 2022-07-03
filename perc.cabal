@@ -14,6 +14,8 @@ extra-source-files: README.md
 executable perc
   hs-source-dirs: .
   main-is: Main.hs
-  build-depends: base, pandoc, bytestring, text, data-default
+  ghc-options: -Wall -Wno-missing-signatures -Wno-orphans
+  build-depends: base, text, bytestring, containers,
+    pandoc, pandoc-types, blaze-html, data-default
   default-language: Haskell2010
-  default-extensions: OverloadedStrings, LambdaCase, TupleSections
+  default-extensions: OverloadedStrings, LambdaCase
