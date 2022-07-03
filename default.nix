@@ -15,7 +15,11 @@
       buildTools = buildTools ++ [ removeReferencesTo ];
       postInstall = ''
         ${postInstall}
-        remove-references-to -t ${pandoc} -t ${pandoc-types} $out/bin/${pname}
+        remove-references-to \
+          -t ${pandoc} \
+          -t ${pandoc.data} \
+          -t ${pandoc-types} \
+          $out/bin/${pname}
       '';
       postFixup = ''
         ${postFixup}
